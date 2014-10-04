@@ -1,5 +1,6 @@
 angular.module( 'repair', [
 	'repairControllers',
+	'repairDirectives',
   'ngRoute'
 ])
 
