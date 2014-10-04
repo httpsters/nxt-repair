@@ -1,0 +1,38 @@
+// SASS DECLARATIONS
+
+$link: #27B;
+$link-light: #4AE;
+
+@mixin border-box {
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+}
+@mixin zero {
+	margin: 0;
+	padding: 0;
+}
+
+// STYLING BEGINS
+
+*, *:before, *:after {
+	@include border-box;
+}
+html {
+	@include zero;
+	height: 100%;
+	padding-left: 50px;
+}
+body {
+	@extend html;
+	background: #FFF;
+	color: #222;
+	font: 400 16px 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+a {
+	color: red;
+	display: block;
+}
+a:hover {
+	cursor: pointer;
+}
