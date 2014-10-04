@@ -6,13 +6,12 @@
 html, body {
   margin: 0;
   padding: 0;
-  height: 100%;
-  padding-left: 50px; }
+  height: 100%; }
 
 body {
-  background: #FFF;
-  color: #222;
-  font: 400 16px 'Helvetica Neue', Helvetica, Arial, sans-serif; }
+  background: white;
+  color: #222222;
+  font: 400 16px 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif; }
 
 a {
   color: red;
@@ -20,3 +19,48 @@ a {
 
 a:hover {
   cursor: pointer; }
+
+.start {
+  background: url(../../designassets/bg_img.jpg);
+  margin: 0 auto;
+  text-align: center;
+  width: 800px;
+  max-width: 90%; }
+  .start h1 {
+    color: #222222;
+    font-size: 40px;
+    margin: 0 auto;
+    text-transform: uppercase; }
+  .start input {
+    border: 1px solid #222222;
+    border-radius: 3px;
+    display: block;
+    height: 35px;
+    line-height: 2;
+    margin: 20px auto;
+    outline: 0;
+    width: 400px; }
+  .start button {
+    background: #47aad8;
+    border: none;
+    border-bottom: 2px solid #036694;
+    border-radius: 3px;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    display: block;
+    margin: 0 auto;
+    outline: none;
+    padding: 5px 30px;
+    text-shadow: 0 1px #036694; }
+    .start button:hover {
+      background: #58BBE9;
+      border-bottom-width: 1px;
+      cursor: pointer;
+      position: relative;
+      top: 1px; }
+    .start button:active {
+      background: #65C5F5;
+      border-bottom-width: 0;
+      position: relative;
+      top: 2px; }

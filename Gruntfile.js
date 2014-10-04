@@ -32,15 +32,15 @@ module.exports = function(grunt) {
         }
       }
     },
-    // cssmin: {
-    //   minify: {
-    //     expand: true,
-    //     cwd: 'src/css',
-    //     src: ['style.css'],
-    //     dest: 'src/css/',
-    //     ext: '.min.css'
-    //   }
-    // },
+    cssmin: {
+      minify: {
+        expand: true,
+        cwd: 'src/css',
+        src: ['style.css'],
+        dest: 'src/css/',
+        ext: '.min.css'
+      }
+    },
     watch: {
       sass: {
         files: ['src/sass/style.scss', 'src/**/*.html'],
@@ -87,6 +87,6 @@ module.exports = function(grunt) {
   grunt.registerTask('test', ['karma', 'protractor:singlerun']);
   grunt.registerTask('style', ['sass']);
 
-  grunt.registerTask('default', ['sass', 'connect', 'open', 'watch']);
+  grunt.registerTask('default', ['sass', 'cssmin', 'connect', 'open', 'watch']);
 
 };

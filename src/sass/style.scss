@@ -1,7 +1,11 @@
 // SASS DECLARATIONS
 
-$link: #27B;
-$link-light: #4AE;
+$black: #222;
+$white: #FFF;
+$blue: #47AAD8;
+$dark-blue: #036694;
+$button: #DDD;
+$radius: 3px;
 
 @mixin border-box {
 	box-sizing: border-box;
@@ -21,13 +25,12 @@ $link-light: #4AE;
 html {
 	@include zero;
 	height: 100%;
-	padding-left: 50px;
 }
 body {
 	@extend html;
-	background: #FFF;
-	color: #222;
-	font: 400 16px 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	background: $white;
+	color: $black;
+	font: 400 16px 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 a {
 	color: red;
@@ -35,4 +38,62 @@ a {
 }
 a:hover {
 	cursor: pointer;
+}
+.start {
+	background: url(../../designassets/bg_img.jpg);
+	margin: 0 auto;
+	text-align: center;
+	width: 800px;
+	max-width: 90%;
+	h1 {
+		color: $black;
+		font-size: 40px;
+		margin: 0 auto;
+		text-transform: uppercase;
+	}
+	// .help {
+	// 	background: $blue;
+	// 	border-radius: $radius;
+	// 	margin: 20px auto;
+	// 	padding: 10px;
+	// 	width: 410px;
+	// 	max-width: 92%;
+	// }
+	input {
+		border: 1px solid $black;
+		border-radius: $radius;
+		display: block;
+		height: 35px;
+		line-height: 2;
+		margin: 20px auto;
+		outline: 0;
+		width: 400px;
+	}
+	button {
+		background: $blue;
+		border: none;
+		border-bottom: 2px solid $dark-blue;
+		border-radius: $radius;
+		color: $white;
+		font-size: 20px;
+		font-weight: bold;
+		display: block;
+		margin: 0 auto;
+		outline: none;
+		padding: 5px 30px;
+		text-shadow: 0 1px #036694;
+		&:hover {
+			background: #58BBE9;
+			border-bottom-width: 1px;
+			cursor: pointer;
+			position: relative;
+			top: 1px;
+		}
+		&:active {
+			background: #65C5F5;
+			border-bottom-width: 0;
+			position: relative;
+			top: 2px;
+		}
+	}
 }
