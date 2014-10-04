@@ -32,9 +32,11 @@ a:hover {
     margin: 0 auto;
     text-transform: uppercase; }
   .start input {
-    border: 1px solid #222222;
-    border-radius: 3px;
+    border: 1px solid #888;
+    color: #222222;
     display: block;
+    font-size: 16px;
+    font-weight: 500;
     height: 35px;
     line-height: 2;
     margin: 20px auto;
