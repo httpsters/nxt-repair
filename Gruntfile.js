@@ -1,3 +1,5 @@
+var livereloadPort = 35729;
+
 module.exports = function(grunt) {
 
   grunt.initConfig({
@@ -30,18 +32,18 @@ module.exports = function(grunt) {
         }
       }
     },
-    cssmin: {
-      minify: {
-        expand: true,
-        cwd: 'src/css',
-        src: ['style.css'],
-        dest: 'src/css/',
-        ext: '.min.css'
-      }
-    },
+    // cssmin: {
+    //   minify: {
+    //     expand: true,
+    //     cwd: 'src/css',
+    //     src: ['style.css'],
+    //     dest: 'src/css/',
+    //     ext: '.min.css'
+    //   }
+    // },
     watch: {
       sass: {
-        files: ['src/sass/style.scss', 'src/app/**/*.html'],
+        files: ['src/sass/style.scss', 'src/**/*.html'],
         tasks: ['sass']
       },
       cssmin: {
@@ -55,6 +57,7 @@ module.exports = function(grunt) {
     connect: {
       server: {
         options: {
+          base: 'src',
           hostname: '*',
           // hostname: 'localhost',
           port: 3000,
@@ -82,8 +85,8 @@ module.exports = function(grunt) {
   grunt.registerTask('unit', ['karma']);
   grunt.registerTask('e2e', ['protractor:singlerun']);
   grunt.registerTask('test', ['karma', 'protractor:singlerun']);
-  grunt.registerTask('style', ['sass', 'cssmin']);
+  grunt.registerTask('style', ['sass']);
 
-  grunt.registerTask('default', ['sass', 'cssmin', 'connect', 'open', 'watch']);
+  grunt.registerTask('default', ['sass', 'connect', 'open', 'watch']);
 
 };
