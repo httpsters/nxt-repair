@@ -9,7 +9,8 @@ html, body {
   height: 100%; }
 
 body {
-  background: white;
+  background: url(../assets/bg_img.jpg) no-repeat;
+  background-size: cover;
   color: #222222;
   font: 400 16px 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif; }
 
@@ -39,31 +40,42 @@ a:hover {
   margin-bottom: 5px; }
 
 .start {
-  background: url(../../designassets/bg_img.jpg);
+  height: 100%;
   margin: 0 auto;
   text-align: center;
   width: 800px;
   max-width: 90%; }
+  .start .main {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%); }
   .start h1 {
     color: #222222;
     font-size: 40px;
     margin: 0 auto;
     text-transform: uppercase; }
   .start input {
-    border: 1px solid #888;
+    background: #FFF;
+    border: 1px solid #AAA;
+    box-shadow: none;
     color: #222222;
     display: block;
-    font-size: 16px;
+    font-size: 22px;
     font-weight: 500;
-    height: 35px;
+    height: 45px;
     line-height: 2;
-    margin: 20px auto;
+    margin: 41px auto 20px;
     outline: 0;
-    width: 400px; }
+    padding: 5px;
+    width: 400px;
+    max-width: 90%; }
   .start button {
     background: #47aad8;
     border: none;
-    border-bottom: 2px solid #036694;
+    box-shadow: 0 2px 0 0 #036694;
     border-radius: 3px;
     color: white;
     font-size: 20px;
@@ -75,12 +87,12 @@ a:hover {
     text-shadow: 0 1px #036694; }
     .start button:hover {
       background: #58BBE9;
-      border-bottom-width: 1px;
+      box-shadow: 0 1px 0 0 #036694;
       cursor: pointer;
       position: relative;
       top: 1px; }
     .start button:active {
       background: #65C5F5;
-      border-bottom-width: 0;
+      box-shadow: none;
       position: relative;
       top: 2px; }

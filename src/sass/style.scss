@@ -16,6 +16,14 @@ $radius: 3px;
 	margin: 0;
 	padding: 0;
 }
+@mixin centre {
+	position: absolute;
+	top: 45%;
+	left: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	ms-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+}
 
 // STYLING BEGINS
 
@@ -28,7 +36,8 @@ html {
 }
 body {
 	@extend html;
-	background: $white;
+	background: url(../assets/bg_img.jpg) no-repeat;
+	background-size: cover;
 	color: $black;
 	font: 400 16px 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
@@ -68,11 +77,14 @@ a:hover {
 }
 
 .start {
-	background: url(../../designassets/bg_img.jpg);
+	height: 100%;
 	margin: 0 auto;
 	text-align: center;
 	width: 800px;
 	max-width: 90%;
+	.main {
+		@include centre;
+	}
 	h1 {
 		color: $black;
 		font-size: 40px;
@@ -80,21 +92,26 @@ a:hover {
 		text-transform: uppercase;
 	}
 	input {
-		border: 1px solid #888;
+		background: #FFF;
+		border: 1px solid #AAA;
+		box-shadow: none;
 		color: $black;
 		display: block;
-		font-size: 16px;
+		font-size: 22px;
 		font-weight: 500;
-		height: 35px;
+		height: 45px;
 		line-height: 2;
-		margin: 20px auto;
+		margin: 41px auto 20px;
 		outline: 0;
+		padding: 5px;
 		width: 400px;
+		max-width: 90%;
 	}
 	button {
 		background: $blue;
 		border: none;
-		border-bottom: 2px solid $dark-blue;
+		// border-bottom: 2px solid $dark-blue;
+		box-shadow: 0 2px 0 0 $dark-blue;
 		border-radius: $radius;
 		color: $white;
 		font-size: 20px;
@@ -106,14 +123,16 @@ a:hover {
 		text-shadow: 0 1px #036694;
 		&:hover {
 			background: #58BBE9;
-			border-bottom-width: 1px;
+			// border-bottom-width: 1px;
+			box-shadow: 0 1px 0 0 $dark-blue;
 			cursor: pointer;
 			position: relative;
 			top: 1px;
 		}
 		&:active {
 			background: #65C5F5;
-			border-bottom-width: 0;
+			// border-bottom-width: 0;
+			box-shadow: none;
 			position: relative;
 			top: 2px;
 		}
