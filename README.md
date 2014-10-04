@@ -1,4 +1,4 @@
 nxt-repair
 ==========
 
-Mastercard NXT hackathon project
+Mastercard NXT Hackathon Project
