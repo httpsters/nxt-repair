@@ -183,8 +183,8 @@ angular.module('repairControllers', [])
 	};
 
 	$scope.quoteItems = [
-		{name: "Tire Replacement", img: "tire.jpg", desc: "$245.00" , amt: 245.00},
-		{name: "Muffler", img: "muffler.jpg", desc: "$300.00", amt: 300.00 },
+		{name: "Tire Replacement", img: "tire.jpg", desc: "245.00" , detailed:"blah blah blah blah blah blah", amt: 245.00},
+		{name: "Muffler", img: "muffler.jpg", desc: "$300.00", detailed:"boom", amt: 300.00 },
 
 	];
 })

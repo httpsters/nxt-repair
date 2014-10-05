@@ -23,7 +23,11 @@
     <h3 class="modal-title">{{ productInfo.name }}</h3>
   </div>
   <div class="modal-body">
-    <img style="max-width: 100px; max-height: 100px" src="img/{{ productInfo.img }}"></div>
+   <span class="research-img"> <img style="max-width: 100px; max-height: 100px" src="img/{{ productInfo.img }}"></span> 
+   <span class="research-info"> 
+   {{ productInfo.detailed }}
+   </span>
+   </div>
       {{ productInfo.desc }}</b>
   </div>
   <div class="modal-footer">
