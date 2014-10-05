@@ -4,7 +4,7 @@
   
   <h1>Garage</h1>
 <hr>
-
+<div class="pagewrapper">
 <ul ng-show='selectedGarage === undefined' class='listing garage-listing'>
   <li ng-repeat="garage in garages" ng-click="selectGarage(garage, $index)">
     <i class="arrow fa fa-angle-right"></i>
@@ -14,6 +14,7 @@
 
   </li>
 </ul>
+</div>
 <!--Garage indv info-->
 <div ng-show='selectedGarage !== undefined'>
   <div class='name'>{{ selectedGarage.name }}</div>

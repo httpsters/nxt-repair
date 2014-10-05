@@ -7865,6 +7865,9 @@ section {
   height: 100%;
 }
 
+.desc{
+  padding-left: 10px;
+}
 .hidden {
   top: 1000px;
   left: 1000px;

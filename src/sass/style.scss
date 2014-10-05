@@ -102,7 +102,10 @@ a:hover {
 	font: 400 16px 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	text-align:left;
 	font-size: 24px;
+	padding-left: 10px;
 }
+
+
 
 .credits{
 	padding-left:15px;
@@ -113,6 +116,11 @@ span.highlight-text{
 	color: #3498db;
 }
 
+.pagewrapper{
+	width:760px;
+	padding: 10px;
+
+}
 
 .start {
 	img.main-bg {
@@ -134,7 +142,10 @@ span.highlight-text{
 		margin: 0 auto;
 		text-transform: uppercase;
 	}
-
+	h4{
+	padding-left:10px;
+	
+	}
 	.calender {
 	
 	height:65px;

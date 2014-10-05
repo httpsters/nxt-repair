@@ -61,7 +61,8 @@ a:hover {
   color: #222;
   font: 400 16px 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   text-align: left;
-  font-size: 24px; }
+  font-size: 24px;
+  padding-left: 10px; }
 
 .credits {
   padding-left: 15px;
@@ -69,6 +70,10 @@ a:hover {
 
 span.highlight-text {
   color: #3498db; }
+
+.pagewrapper {
+  width: 760px;
+  padding: 10px; }
 
 .start {
   height: 100%;
@@ -89,6 +94,8 @@ span.highlight-text {
     font-size: 40px;
     margin: 0 auto;
     text-transform: uppercase; }
+  .start h4 {
+    padding-left: 10px; }
   .start .calender {
     height: 65px; }
   .start input {
