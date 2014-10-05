@@ -14,9 +14,24 @@
 <button ng-show='submitted === undefined' style="margin-left: 15px" ng-click="submitQuote()" class="btn btn-primary">Accept</button>
 
 <div class="margin-left: 15px" ng-show='submitted' >
-<div class="margin-left: 15px">Inspect the completed work to your satisfaction, then continue to payment.</div><br>
-<button style="margin-left: 15px" ng-click="submitPayment()" class="btn btn-primary">Confirm & Pay</button>
-<div>
+  <div class="margin-left: 15px">Inspect the completed work to your satisfaction, then continue to payment.</div><br>
+  <button style="margin-left: 15px" ng-click="submitPayment()" class="btn btn-primary">Confirm & Pay</button>
+</div>
+
+<script type="text/ng-template" id="myModalContent.html">
+  <div class="modal-header">
+    <h3 class="modal-title">{{ productInfo.name }}</h3>
+  </div>
+  <div class="modal-body">
+    <img style="max-width: 100px; max-height: 100px" src="img/{{ productInfo.img }}"></div>
+      {{ productInfo.desc }}</b>
+  </div>
+  <div class="modal-footer">
+      <button class="btn btn-primary" ng-click="ok()">OK</button>
+      <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+  </div>
+</script>
+
 <script type="text/javascript">
     function processPaymentAmount(dollarAmt) {
         Android.processPaymentAmount(dollarAmt);

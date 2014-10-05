@@ -127,7 +127,21 @@ angular.module('repairControllers', [])
 
 })
 
-.controller('QuoteController', function ($scope, $http, $window, $location, appState) {
+.controller('ModalInstanceCtrl', function ($scope, $modalInstance, productInfo) {
+
+  $scope.productInfo = productInfo;
+
+  $scope.ok = function () {
+    $modalInstance.close($scope.productInfo);
+  };
+
+  $scope.cancel = function () {
+    $modalInstance.dismiss('cancel');
+  };
+
+})
+
+.controller('QuoteController', function ($scope, $http, $modal, $window, $location, appState) {
 
 	$scope.userProfile = appState.getUserProfile();
 
@@ -148,13 +162,15 @@ angular.module('repairControllers', [])
 	};
 
 	$scope.inspect = function(productInfo) {
-		vex.open({
-			content: 
-				"<div class='info-popup'>" +
-					"<div class='img' back-img='img/" + productInfo.img + "' />" +
-					"<span class='name'>" + productInfo.name + "</span>" +
-					"<span class='desc'>" + productInfo.desc + "</span>" +
-				"</div>",
+		var modalInstance = $modal.open({
+			templateUrl: 'myModalContent.html',
+			controller: 'ModalInstanceCtrl',
+			size: 'lg',
+			resolve: {
+				productInfo: function () {
+					return productInfo;
+				}
+			}
 		});
 	};
 
