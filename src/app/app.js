@@ -22,27 +22,16 @@ angular.module( 'repair', [
 		templateUrl: 'app/partials/quote.html',
 		controller: 'QuoteController',
 	})
-
-	// Mechanics Page
-	.when('/mechanics', {
-		templateUrl: 'app/partials/mechanics.html',
-		controller: 'MechanicsController',
+	// Payment Page
+	.when('/payment', {
+		templateUrl: 'app/partials/payment.html',
+		controller: 'PaymentController',
 	})
-	// Listings Page
-	.when('/listings', {
-		templateUrl: 'app/partials/listings.html',
-		controller: 'ListingsController',
+	// Profile Page
+	.when('/profile', {
+		templateUrl: 'app/partials/profile.html',
+		controller: 'ProfileController',
 	})
-	// Whatever Page
-	.when('/whatever', {
-		templateUrl: 'app/partials/whatever.html',
-		controller: 'WhateverController',
-	})
-	// Add Extra Pages Here
-	// .when('/name', {
-	//   templateUrl: 'app/partials/name.html',
-	//   controller: 'NameController',
-	// })
 	.otherwise({redirectTo:'/'});
 	$locationProvider.html5Mode(true);
 }])

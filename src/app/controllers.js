@@ -28,18 +28,33 @@ angular.module('repairControllers', [])
 
 .controller('QuoteController', function ($scope, $http, $window, $location, appState) {
 
+	$scope.submitQuote = function() {
+		appState.submitQuote();
+		$location.path('payment');
+	};
+
 })
 
-.controller('MechanicsController', [ '$scope', '$http', '$window', '$sce', '$location', function ($scope, $http, $window, $sce, $location) {
+.controller('PaymentController', function ($scope, $http, $window, $location, appState) {
 
-}])
+	$scope.submitPayment = function() {
+		$location.path('profile');
+	};
 
-.controller('ListingsController', [ '$scope', '$http', '$window', '$sce', '$location', function ($scope, $http, $window, $sce, $location) {
+})
 
-}])
+.controller('ProfileController', function ($scope, $http, $window, $location, appState) {
 
-.controller('WhateverController', [ '$scope', '$http', '$window', '$sce', '$location', function ($scope, $http, $window, $sce, $location) {
+	$scope.userProfile = {
+		name: "Adriana Lima", 
+		credits: 5,
+		history: [
+			{ type: "repair", subject: "bodywork", date: '2014-10-01' },
+			{ type: "maintenance", subject: "oil", date: '2014-08-05' },
+			{ type: "repair", subject: "engine", date: '2014-03-21' },
+		]
+	};
 
-}])
+})
 
 ;
