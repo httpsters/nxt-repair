@@ -1,3 +1,5 @@
+var AndroidInterop = AndroidInterop || undefined;
+
 angular.module('repairControllers', [])
 
 .controller('StartController', [ '$scope', '$http', '$window', '$sce', '$location', function ($scope, $http, $window, $sce, $location) {
@@ -108,7 +110,10 @@ angular.module('repairControllers', [])
 
 	$scope.submitPayment = function() {
 		$scope.totalAmt += 300.00; //todo: this is tempoary
-		AndroidInterop.processPaymentAmount($scope.totalAmt);
+		if (AndroidInterop !== undefined) {
+			console.log("interop is defined", AndroidInterop);
+			AndroidInterop.processPaymentAmount($scope.totalAmt);
+		}
 		$location.path('profile');
 	};
 
@@ -125,14 +130,14 @@ angular.module('repairControllers', [])
 	$scope.quoteItems = [
 		{name: "Tire Replacement", img: "tire.jpg", desc: "$245.00" },
 		{name: "Muffler", img: "muffler.jpg", desc: "$300.00" },
-		
+
 	];
 })
 
 .controller('ProfileController', function ($scope, $http, $window, $location, appState) {
 
 	$scope.userProfile = {
-		name: "Adriana Lima", 
+		name: "Adriana Lima",
 		credits: 5,
 		history: [
 			{ type: "repair", subject: "bodywork", date: '2014-10-01' },
