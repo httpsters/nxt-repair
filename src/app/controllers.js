@@ -100,7 +100,15 @@ angular.module('repairControllers', [])
 
 .controller('InfoController', function ($scope, $http, $window, $location, appState) {
 
+	$scope.profile = {
+		name: "",
+		license: "",
+		email: "",
+		phone: ""
+	};
+
 	$scope.getQuote = function() {
+		appState.updateUserProfile($scope.profile);
 		$location.path('quote');
 	};
 
@@ -136,15 +144,7 @@ angular.module('repairControllers', [])
 
 .controller('ProfileController', function ($scope, $http, $window, $location, appState) {
 
-	$scope.userProfile = {
-		name: "Adriana Lima",
-		credits: 5,
-		history: [
-			{ type: "repair", subject: "bodywork", date: '2014-10-01' },
-			{ type: "maintenance", subject: "oil", date: '2014-08-05' },
-			{ type: "repair", subject: "engine", date: '2014-03-21' },
-		]
-	};
+	$scope.userProfile = appState.getUserProfile();
 
 })
 
