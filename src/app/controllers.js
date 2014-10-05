@@ -100,12 +100,7 @@ angular.module('repairControllers', [])
 
 .controller('InfoController', function ($scope, $http, $window, $location, appState) {
 
-	$scope.profile = {
-		name: "",
-		license: "",
-		email: "",
-		phone: ""
-	};
+	$scope.profile = appState.getUserProfile();
 
 	$scope.getQuote = function() {
 		appState.updateUserProfile($scope.profile);

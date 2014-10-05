@@ -13,6 +13,7 @@ angular.module("appServices", [])
 		credits: 5,
 		license: "ABCD-123",
 		phone: "123-456-7890",
+		email: "alima@vs.com",
 		history: [
 			{ type: "repair", subject: "bodywork", date: '2014-10-01' },
 			{ type: "maintenance", subject: "oil", date: '2014-08-05' },

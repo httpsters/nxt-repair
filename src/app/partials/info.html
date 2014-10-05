@@ -3,9 +3,10 @@
 <style>
   div { padding: 15px; }
   input { margin-bottom: 15px; }
+  button { margin-left: 15px; }
 </style>
 
-<div style="padding: 15px">
+<div>
   <input type="text" placeholder="Name" ng-model="profile.name"
     popover-trigger="focus" class="form-control">
   <input type="text" placeholder="Licence No." ng-model="profile.license"
@@ -18,7 +19,9 @@
 
 
 
-<button type="button" style="margin-left: 15px" class="btn btn-primary" ng-model="singleModel" btn-checkbox btn-checkbox-true="1" btn-checkbox-false="0" ng-click="getQuote()">
+<button type="button" class="btn btn-primary"
+  ng-model="btnValue" btn-checkbox btn-checkbox-true="1" btn-checkbox-false="0"
+  ng-click="getQuote()">
     Get Quote
 </button>
 
