@@ -101,11 +101,26 @@ angular.module('repairControllers', [])
 .controller('InfoController', function ($scope, $http, $window, $location, appState) {
 
 	var findNymi = function() {
-		var received = "NymiProvisionID NymiProvisionKey";
-		var provisionId = receivedData.split(' ')[0];
-		var provisionKey = receivedData.split(' ')[1];
-		var userProfile = appState.getProfileFromProvisionId(provisionId);
-		$scope.profile = userProfile;
+		setTimeout(function() {
+			var receivedData = "NymiProvisionID NymiProvisionKey";
+			var provisionId = receivedData.split(' ')[0];
+			var provisionKey = receivedData.split(' ')[1];
+			var userProfile = appState.getProfileFromProvisionId(provisionId);
+			console.log('find nymi');
+			$scope.alert("Found your Nymi!");
+			$scope.profile = userProfile;
+		}, 1400);
+	};
+
+	findNymi();
+
+	$scope.alertText = '';
+
+	$scope.alert = function(msg) {
+		$scope.alertText = msg;
+		setTimeout(function() {
+			$scope.alertText = "";
+		}, 3500);
 	};
 	
 	$scope.profile = {};

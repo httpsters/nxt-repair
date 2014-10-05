@@ -12,6 +12,10 @@
   <button class="btn btn-default" ng-click="setState('register')">Register</button>
 </div>
 
+<div class="alert alert-success" ng-show="alertText !== ''">
+  {{ alertText }}
+</div>
+
 <div ng-show='formState === "login"'>
   <input type="text" placeholder="Email" ng-model="profile.email"
       popover-trigger="focus" class="form-control">
