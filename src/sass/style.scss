@@ -36,10 +36,13 @@ html {
 }
 body {
 	@extend html;
-	background: url(../assets/bg_img.jpg) no-repeat;
-	background-size: cover;
 	color: $black;
 	font: 400 16px 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        background-color: white;
+        &.start {
+          background: url(../assets/bg_img.jpg) no-repeat;
+          background-size: cover;
+        }
 }
 a {
 	color: red;

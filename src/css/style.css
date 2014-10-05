@@ -9,10 +9,12 @@ html, body {
   height: 100%; }
 
 body {
-  background: url(../assets/bg_img.jpg) no-repeat;
-  background-size: cover;
   color: #222222;
-  font: 400 16px 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif; }
+  font: 400 16px 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  background-color: white; }
+  body.start {
+    background: url(../assets/bg_img.jpg) no-repeat;
+    background-size: cover; }
 
 a {
   color: red;

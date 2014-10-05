@@ -4,7 +4,7 @@ angular.module('repairControllers', [])
 
 }])
 
-.controller('GarageController', [ '$scope', '$http', '$window', '$sce', '$location', function ($scope, $http, $window, $sce, $location) {
+.controller('GaragesController', function ($scope, $http, $window, $location, appState) {
 
 	$scope.garages = [
 		{name: "Joe's Garage", img: "dupe.png", desc: "Tire replacements" },
@@ -13,7 +13,22 @@ angular.module('repairControllers', [])
 		{name: "Fud's Garage", img: "dupe.png", desc: "Restoration" },
 	];
 
-}])
+	$scope.selectedGarage = undefined;
+
+	$scope.selectGarage = function(garage, idx) {
+		$scope.selectedGarage = garage;
+	};
+
+	$scope.bookGarage = function(date) {
+		appState.bookGarage($scope.selectedGarage, date);
+		$location.path('quote');
+	};
+
+})
+
+.controller('QuoteController', function ($scope, $http, $window, $location, appState) {
+
+})
 
 .controller('MechanicsController', [ '$scope', '$http', '$window', '$sce', '$location', function ($scope, $http, $window, $sce, $location) {
 

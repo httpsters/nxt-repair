@@ -1,0 +1,20 @@
+<h1>Garage Page</h1>
+<a class='back'
+  ng-click="selectedGarage === undefined ? linkTo('start') : selectedGarage = undefined">
+  Go Back</a>
+
+<ul ng-show='selectedGarage === undefined' class='listing garage-listing'>
+  <li ng-repeat="garage in garages" ng-click="selectGarage(garage, $index)">
+    <div class='img' back-img="img/{{ garage.img }}"></div>
+    <span class='name'>{{ garage.name }}</span>
+    <span class='desc'>{{ garage.desc }}</span>
+  </li>
+</ul>
+
+<div ng-show='selectedGarage !== undefined'>
+  <div class='name'>{{ selectedGarage.name }}</div>
+  <div class='desc'>{{ selectedGarage.desc }}</div>
+
+  <button ng-click="bookGarage('2014-10-04')">Book</button>
+  
+</div>
