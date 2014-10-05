@@ -7,10 +7,13 @@ angular.module('repairControllers', [])
 .controller('GaragesController', function ($scope, $http, $window, $location, appState) {
 
 	$scope.garages = [
-		{name: "Joe's Garage", img: "dupe.png", desc: "Tire replacements" },
-		{name: "Bill's Garage", img: "dupe.png", desc: "Engine replacements" },
-		{name: "Kai's Garage", img: "dupe.png", desc: "Regular maintenance" },
-		{name: "Fud's Garage", img: "dupe.png", desc: "Restoration" },
+		{name: "Joe's Garage", img: "garage1.jpg", desc: "Certified Drive Clean Test and Repa" },
+		{name: "Windsor Garage", img: "garage2.jpg", desc: "Independently owned and family op" },
+		{name: "Masters Garage", img: "garage3.jpg", desc: "Masters Garage has been providing a" },
+		{name: "Matt's Garage", img: "garage4.jpg", desc: "Highest standards, dedicated mechanics" },
+		{name: "George's Auto Repair", img: "garage5.jpg", desc: "Garage repair and serive to custom" },
+		{name: "RPR Garage", img: "garage7.jpg", desc: "12 mechanics working to give you " },
+
 	];
 
 	$scope.selectedGarage = undefined;

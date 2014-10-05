@@ -37,7 +37,7 @@ html {
 body {
 	@extend html;
 	color: $black;
-	font: 400 16px 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font: 400 16px 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
         background-color: white;
         &.start {
           background: url(../assets/bg_img.jpg) no-repeat;
@@ -78,6 +78,8 @@ a:hover {
     margin-bottom: 5px;
   }
 }
+
+
 
 .start {
 	height: 100%;
