@@ -3,7 +3,8 @@ angular.module( 'repair', [
 	'repairDirectives',
 	'appServices',
 	'ngRoute',
-	'ui.bootstrap'
+	'ui.bootstrap',
+	'firebase'
 ])
 
 .config([ '$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {

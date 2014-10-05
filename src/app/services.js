@@ -1,6 +1,15 @@
 angular.module("appServices", [])
 
-.service("appState", function() {
+.service("appState", function($firebase) {
+
+	var rootUrl = 'https://nxt-repair.firebaseio.com/';
+	var rootRef = new Firebase(rootUrl);
+	var rootSync = $firebase(rootRef);
+
+	var userUrl = rootUrl += 'users/';
+	var userRef = new Firebase(userUrl);
+	var userSync = $firebase(userRef);
+
 	var booking = {
 		garage: null,
 		appt: null
@@ -8,7 +17,7 @@ angular.module("appServices", [])
 
 	var quote = {};
 
-	var userProfile = {
+	var userObject = {
 		name: "Adriana Lima",
 		credits: 5,
 		license: "ABCD-123",
@@ -21,6 +30,14 @@ angular.module("appServices", [])
 		]
 	};
 
+	var addUser = function(newUser) {
+		userSync.$push(newUser).then(function(createdUser) {
+			console.log("added new user", createdUser);
+		});
+	};
+
+	addUser(userObject);
+
 	return {
 		bookGarage: function(garage, appt) {
 			console.log("booked garage", garage, "for appt", appt);
@@ -29,6 +46,10 @@ angular.module("appServices", [])
 		},
 		submitQuote: function() {
 			console.log('submit quote');
+		},
+		getProfileFromProvisionId: function(provId) {
+			/* queries firebase for the profile with provisionId = provId */
+			return userProfile;
 		},
 		updateUserProfile: function(obj) {
 			console.log('updateUserProfile', obj, userProfile);

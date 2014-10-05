@@ -100,6 +100,14 @@ angular.module('repairControllers', [])
 
 .controller('InfoController', function ($scope, $http, $window, $location, appState) {
 
+	var findNymi = function() {
+		var received = "NymiProvisionID NymiProvisionKey";
+		var provisionId = receivedData.split(' ')[0];
+		var provisionKey = receivedData.split(' ')[1];
+		var userProfile = appState.getProfileFromProvisionId(provisionId);
+		$scope.profile = userProfile;
+	};
+
 	$scope.profile = appState.getUserProfile();
 
 	$scope.getQuote = function() {
@@ -107,9 +115,23 @@ angular.module('repairControllers', [])
 		$location.path('quote');
 	};
 
+	$scope.pairNymi = function() {
+		console.log("pairing with Nymi");
+		console.log("paired!");
+		var receivedData = "NymiProvisionID NymiProvisionKey";
+		var provisionId = receivedData.split(' ')[0];
+		var provisionKey = receivedData.split(' ')[1];
+		$scope.profile.nymiProvisionId = provisionId;
+		$scope.profile.nymiProvisionKey = provisionKey;
+	};
+
 })
 
 .controller('QuoteController', function ($scope, $http, $window, $location, appState) {
+
+	$scope.userProfile = appState.getUserProfile();
+
+	$scope.userProfile.credit += 5; // add $5 of credit each time
 
 	$scope.submitPayment = function() {
 		$scope.totalAmt += 300.00; //todo: this is tempoary
