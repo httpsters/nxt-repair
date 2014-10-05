@@ -183,8 +183,8 @@ angular.module('repairControllers', [])
 	};
 
 	$scope.quoteItems = [
-		{name: "Tire Replacement", img: "tire.jpg", desc: "245.00" , detailed:"blah blah blah blah blah blah", amt: 245.00},
-		{name: "Muffler", img: "muffler.jpg", desc: "$300.00", detailed:"boom", amt: 300.00 },
+		{name: "Tire Replacement", img: "tire.jpg", desc: "245.00" , detailed:"A muffler is a device for reducing the amount of noise emitted by the exhaust of an internal combustion engine.", amt: 245.00},
+		{name: "Muffler", img: "muffler.jpg", desc: "$300.00", detailed:"Proper vehicle safety requires specific attention to inflation pressure, tread depth, and general condition of the tires. Over-inflated tires run the risk of explosive decompression (they may pop).", amt: 300.00 },
 
 	];
 })
