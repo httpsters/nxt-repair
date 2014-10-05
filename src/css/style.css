@@ -9,7 +9,7 @@ html, body {
   height: 100%; }
 
 body {
-  color: #222222;
+  color: #222;
   font: 400 16px 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   background-color: white; }
   body.start {
@@ -55,7 +55,7 @@ a:hover {
   text-overflow: ellipsis; }
 
 .name {
-  color: #222222;
+  color: #222;
   font: 400 16px 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   text-align: left;
   font-size: 24px;
@@ -70,7 +70,6 @@ span.highlight-text {
 
 .start {
   height: 100%;
-  margin: 0 auto;
   text-align: center;
   width: 800px;
   max-width: 90%; }
@@ -82,7 +81,7 @@ span.highlight-text {
     ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%); }
   .start h1 {
-    color: #222222;
+    color: #222;
     font-size: 40px;
     margin: 0 auto;
     text-transform: uppercase; }
@@ -90,7 +89,7 @@ span.highlight-text {
     background: #FFF;
     border: 1px solid #AAA;
     box-shadow: none;
-    color: #222222;
+    color: #222;
     display: block;
     font-size: 22px;
     font-weight: 500;
@@ -102,11 +101,11 @@ span.highlight-text {
     width: 400px;
     max-width: 90%; }
   .start button {
-    background: #47aad8;
+    background: #47AAD8;
     border: none;
     box-shadow: 0 2px 0 0 #036694;
     border-radius: 3px;
-    color: white;
+    color: #FFF;
     font-size: 20px;
     font-weight: bold;
     display: block;
@@ -125,3 +124,5 @@ span.highlight-text {
       box-shadow: none;
       position: relative;
       top: 2px; }
+
+/*# sourceMappingURL=style.css.map */
