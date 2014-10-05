@@ -13,7 +13,6 @@ angular.module('repairControllers', [])
 		{name: "Matt's Garage", img: "garage4.jpg", desc: "Highest standards, dedicated mechanics" },
 		{name: "George's Auto Repair", img: "garage5.jpg", desc: "Garage repair and serive to custom" },
 		{name: "RPR Garage", img: "garage7.jpg", desc: "12 mechanics working to give you " },
-
 	];
 
 	$scope.selectedGarage = undefined;
@@ -36,6 +35,11 @@ angular.module('repairControllers', [])
 		$location.path('payment');
 	};
 
+	$scope.garages = [
+		{name: "Tire Replacement", img: "tire.jpg", desc: "$245.00" },
+		{name: "Muffler", img: "muffler.jpg", desc: "$300.00" },
+		
+	];
 })
 
 .controller('PaymentController', function ($scope, $http, $window, $location, appState) {

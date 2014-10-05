@@ -67,6 +67,7 @@ a:hover {
     width: 60px;
     height: 60px;
     margin-right: 15px;
+    border-radius: 50%;
   }
 }
 
@@ -79,7 +80,22 @@ a:hover {
   }
 }
 
+.name{
+	color: $black;
+	font: 400 16px 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	text-align:left;
+	font-size: 24px;
+	padding-left: 15px;
+}
 
+.credits{
+	padding-left:15px;
+	text-transform:uppercase;
+}
+
+span{
+	color: #3498db;
+}
 
 .start {
 	height: 100%;
