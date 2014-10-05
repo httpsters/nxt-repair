@@ -31,6 +31,11 @@
               <input type="text" class="form-control" datepicker-popup="{{format}}" ng-model="dt" is-open="opened" min-date="minDate" max-date="'2015-06-22'" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />
               <span class="input-group-btn">
                 <button type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+
+
+                
+
+
               </span>
             </p>
         </div>
@@ -52,7 +57,9 @@
 
   <pre class="alert alert-info">Time is: {{mytime | date:'shortTime' }}</pre> -->
 
- <button ng-click="linkTo('info')">BOOK</button>
+
+
+ <button type="button" class="btn btn-primary" ng-model="singleModel" btn-checkbox btn-checkbox-true="1" btn-checkbox-false="0" ng-click="linkTo('payment')"> BOOK </button>
 
 </div>
 
