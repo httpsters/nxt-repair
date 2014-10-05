@@ -65,7 +65,7 @@ a:hover {
   padding-left: 15px;
   text-transform: uppercase; }
 
-span {
+span.highlight-text {
   color: #3498db; }
 
 .start {

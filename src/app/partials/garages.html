@@ -2,7 +2,7 @@
 <a class='back'
   ng-click="selectedGarage === undefined ? linkTo('start') : selectedGarage = undefined">
   Go Back</a>
-
+<hr>
 
 <ul ng-show='selectedGarage === undefined' class='listing garage-listing'>
   <li ng-repeat="garage in garages" ng-click="selectGarage(garage, $index)">
