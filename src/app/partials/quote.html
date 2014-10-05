@@ -3,4 +3,12 @@
   ng-click="linkTo('garages')">
   Go Back</a>
 
-<button ng-click="submitQuote()">Place Order</button>
+  <ul ng-show='selectedGarage === undefined' class='listing garage-listing'>
+  <li ng-repeat="garage in garages" ng-click="selectGarage(garage, $index)">
+    <div class='img' back-img="img/{{ garage.img }}"></div>
+    <span class='name'>{{ garage.name }}</span>
+    <span class='desc'>{{ garage.desc }}</span>
+  </li>
+</ul>
+
+<button ng-click="submitQuote()">NEXT</button>
