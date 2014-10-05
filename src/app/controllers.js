@@ -147,6 +147,17 @@ angular.module('repairControllers', [])
 		// send confirm to backent :P
 	};
 
+	$scope.inspect = function(productInfo) {
+		vex.open({
+			content: 
+				"<div class='info-popup'>" +
+					"<div class='img' back-img='img/" + productInfo.img + "' />" +
+					"<span class='name'>" + productInfo.name + "</span>" +
+					"<span class='desc'>" + productInfo.desc + "</span>" +
+				"</div>",
+		});
+	};
+
 	$scope.kill = function(index) {
 		console.log(index);
 		$scope.quoteItems.splice(index, 1); //remove item from list

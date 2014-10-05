@@ -36,7 +36,7 @@ angular.module("appServices", [])
 		});
 	};
 
-	addUser(userObject);
+	//addUser(userObject);
 
 	return {
 		bookGarage: function(garage, appt) {
@@ -52,17 +52,15 @@ angular.module("appServices", [])
 			return userProfile;
 		},
 		updateUserProfile: function(obj) {
-			console.log('updateUserProfile', obj, userProfile);
 			for (var key in obj) {
 				if (obj.hasOwnProperty(key)) {
 					var val = obj[key];
-					userProfile[key] = val;
+					userObject[key] = val;
 				}
 			}
-			console.log(userProfile);
 		},
 		getUserProfile: function() {
-			return userProfile;
+			return userObject;
 		}
 	};
 });

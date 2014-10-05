@@ -6,7 +6,7 @@
     <div class='img' back-img="img/{{ item.img }}"></div>
     <span class='name'>{{ item.name }}</span>
     <span class='desc'>{{ item.desc }}</span>
-    <button style="margin-left: 15px" ng-click="inspect($index)" class="glyphicon glyphicon-search btn btn-info"></button>
+    <button style="margin-left: 15px" ng-click="inspect(item)" class="glyphicon glyphicon-search btn btn-info"></button>
     <button style="margin-left: 15px" ng-click="kill($index)" class="glyphicon glyphicon-remove btn btn-danger"></button>
   </li>
 </ul>
