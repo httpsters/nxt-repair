@@ -7,6 +7,20 @@
 </style>
 
 <div>
+  <button class="btn btn-success" ng-click="setState('login')">Login</button>
+  or
+  <button class="btn btn-default" ng-click="setState('register')">Register</button>
+</div>
+
+<div ng-show='formState === "login"'>
+  <input type="text" placeholder="Email" ng-model="profile.email"
+      popover-trigger="focus" class="form-control">
+  <input type="password" placeholder="Password" ng-model="profile.password"
+  popover-trigger="focus" class="form-control">
+  <button class="btn btn-default" ng-click='submitLogin()'>Login</button>
+</div>
+
+<div ng-show='formState === "register"'>
   <input type="text" placeholder="Name" ng-model="profile.name"
     popover-trigger="focus" class="form-control">
   <input type="text" placeholder="Licence No." ng-model="profile.license"
@@ -15,10 +29,12 @@
     popover-trigger="focus" class="form-control">
   <input type="text" placeholder="Phone" ng-model="profile.phone"
   popover-trigger="focus" class="form-control">
-  <button ng-click="pairNymi()">Pair with your Nymi</button>
+  <input type="password" placeholder="Password" ng-model="profile.password"
+    class="form-control">
+  <button class='btn btn-default' ng-click="pairNymi()">Pair with your Nymi</button>
 </div>
 
-<button type="button" class="btn btn-primary"
+<button ng-show="formState !== undefined" type="button" class="btn btn-primary"
   ng-model="btnValue" btn-checkbox btn-checkbox-true="1" btn-checkbox-false="0"
   ng-click="getQuote()">
     Get Quote

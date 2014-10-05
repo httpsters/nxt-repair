@@ -107,12 +107,27 @@ angular.module('repairControllers', [])
 		var userProfile = appState.getProfileFromProvisionId(provisionId);
 		$scope.profile = userProfile;
 	};
-
-	$scope.profile = appState.getUserProfile();
+	
+	$scope.profile = {};
+	
+	$scope.submitLogin = function() {
+		var email = $scope.profile.email;
+		var pass = $scope.profile.pass;
+		var user = appState.getUserProfile(email, pass);
+		if (user) {
+			$scope.getQuote();
+		}
+	};
 
 	$scope.getQuote = function() {
 		appState.updateUserProfile($scope.profile);
 		$location.path('quote');
+	};
+
+	$scope.formState = undefined;
+
+	$scope.setState = function(state) {
+		$scope.formState = state;
 	};
 
 	$scope.pairNymi = function() {

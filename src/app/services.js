@@ -23,6 +23,7 @@ angular.module("appServices", [])
 		license: "ABCD-123",
 		phone: "123-456-7890",
 		email: "alima@vs.com",
+		password: "password",
 		history: [
 			{ type: "repair", subject: "bodywork", date: '2014-10-01' },
 			{ type: "maintenance", subject: "oil", date: '2014-08-05' },
@@ -49,7 +50,7 @@ angular.module("appServices", [])
 		},
 		getProfileFromProvisionId: function(provId) {
 			/* queries firebase for the profile with provisionId = provId */
-			return userProfile;
+			return userObject;
 		},
 		updateUserProfile: function(obj) {
 			for (var key in obj) {
@@ -59,8 +60,10 @@ angular.module("appServices", [])
 				}
 			}
 		},
-		getUserProfile: function() {
-			return userObject;
+		getUserProfile: function(email, password) {
+			id = '-JYW4Ym6W6e8yW5Ck3JY';
+			url = rootUrl+'users/'+id;
+			return $firebase(new Firebase(url));
 		}
 	};
 });
