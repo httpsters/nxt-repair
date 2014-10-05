@@ -46,13 +46,16 @@ body {
 }
 a {
 	color: red;
-	display: block;
+	display: inline-block;
+	
 }
 a:hover {
 	cursor: pointer;
 }
 
-
+.back-arrow {
+	font-size: 30px;
+}
 
 .listing {
   li {
@@ -63,7 +66,7 @@ a:hover {
       height: 0;
       clear: both;
     }
-    height: 60px;
+    height: 95px;
     overflow: hidden;
     text-overflow: ellipsis;
   }
@@ -86,7 +89,7 @@ a:hover {
 .garage-listing {
   .name {
     font-weight: bold;
-    color: blue;
+    color: #3498db;
     display: block;
     margin-bottom: 5px;
     overflow: hidden;
@@ -99,7 +102,6 @@ a:hover {
 	font: 400 16px 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	text-align:left;
 	font-size: 24px;
-	padding-left: 15px;
 }
 
 .credits{
@@ -111,9 +113,9 @@ span.highlight-text{
 	color: #3498db;
 }
 
-.start {
 
-  img.main-bg {
+.start {
+	img.main-bg {
     height: 100%;
   }
 
@@ -132,6 +134,12 @@ span.highlight-text{
 		margin: 0 auto;
 		text-transform: uppercase;
 	}
+
+	.calender {
+	
+	height:65px;
+
+	}
 	input {
 		background: #FFF;
 		border: 1px solid #AAA;
@@ -148,6 +156,7 @@ span.highlight-text{
 		width: 400px;
 		max-width: 90%;
 	}
+	
 	button {
 		background: $blue;
 		border: none;
