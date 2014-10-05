@@ -3,16 +3,18 @@
 <div class="pagewrapper">
 <ul ng-show='selectedGarage === undefined' class='listing garage-listing'>
   <li ng-repeat="garage in garages" ng-click="selectGarage(garage, $index)">
-    <i class="arrow fa fa-angle-right"></i>
+
     <div class='img' back-img="img/{{ garage.img }}"></div>
     <span class='name'>{{ garage.name }}</span>
     <span class='desc'>{{ garage.desc }}</span>
+    <i class="arrow fa fa-angle-right"></i>
 
   </li>
 </ul>
 </div>
 <!--Garage indv info-->
 <div ng-show='selectedGarage !== undefined'>
+  <div class='img' back-img="img/{{ selectedGarage.img }}"></div>
   <div class='name'>{{ selectedGarage.name }}</div>
   <div class='desc'>{{ selectedGarage.desc }}</div>
 
