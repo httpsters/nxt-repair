@@ -2,10 +2,12 @@
 <a class='back'
   ng-click="linkTo('start')">
   Go Back</a>
+  <hr>
 
 <div class="name">{{ userProfile.name }}</div>
 
-<div class="credits">Thanks for using <span> NXT REPAIR </span> <br> You have <span> ${{ userProfile.credits }} off </span> your nxt service with us</div>
+<div class="credits">Thanks for using <span class="highlight-text"> NXT REPAIR </span> <br> You have <span class="highlight-text"> ${{ userProfile.credits }} off </span> your nxt service with us</div>
+<hr>
 
 <ul>
   <li ng-repeat="event in userProfile.history">
