@@ -121,6 +121,8 @@ angular.module('repairControllers', [])
 .controller('PaymentController', function ($scope, $http, $window, $location, appState) {
 
 	$scope.submitPayment = function() {
+		$scope.totalAmt = 666.00; //todo: this is tempoary
+		AndroidInterop.processPaymentAmount($scope.totalAmt);
 		$location.path('profile');
 	};
 

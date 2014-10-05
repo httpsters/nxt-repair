@@ -1,6 +1,15 @@
 <h1>Payment Page</h1>
 
 <hr>
+
 <button type="button" class="btn btn-primary" ng-model="singleModel" btn-checkbox btn-checkbox-true="1" btn-checkbox-false="0" ng-click="linkTo('profile')">
         Pay Now
     </button>
+
+<button ng-click="submitPayment()">Pay Now</button>
+
+<script type="text/javascript">
+    function processPaymentAmount(dollarAmt) {
+        Android.processPaymentAmount(dollarAmt);
+    }
+</script>
