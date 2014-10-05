@@ -1,8 +1,4 @@
-
-<a class='back'
-  ng-click="selectedGarage === undefined ? linkTo('start') : selectedGarage = undefined"></a>
-  
-  <h1>Garage</h1>
+<h1>Make Appointment</h1>
 <hr>
 <div class="pagewrapper">
 <ul ng-show='selectedGarage === undefined' class='listing garage-listing'>
@@ -24,7 +20,7 @@
 <div ng-controller="DatepickerDemoCtrl">
     
 
-    <h4>Book an Appointment</h4>
+    <h4 class='name'>Book an Appointment</h4>
     <div class="row">
         <div class="col-md-6 ">
             <p class="input-group calender">
@@ -44,7 +40,7 @@
    <!--  <button type="button" class="btn btn-sm btn-info" ng-click="today()">Today</button>-->
 </div>
 
-<div ng-controller="TimepickerDemoCtrl">
+<div class='name' ng-controller="TimepickerDemoCtrl">
 
   <timepicker ng-model="mytime" ng-change="changed()" hour-step="hstep" minute-step="mstep" show-meridian="ismeridian"></timepicker>
 
@@ -59,7 +55,7 @@
 
 
 
- <button type="button" class="btn btn-primary" ng-model="singleModel" btn-checkbox btn-checkbox-true="1" btn-checkbox-false="0" ng-click="linkTo('info')"> BOOK </button>
+ <button type="button" class="btn btn-primary" ng-model="singleModel" btn-checkbox btn-checkbox-true="1" btn-checkbox-false="0" ng-click="linkTo('info')"> Next: Enter my Info </button>
 
 </div>
 

@@ -28,11 +28,6 @@ angular.module( 'repair', [
 		templateUrl: 'app/partials/quote.html',
 		controller: 'QuoteController',
 	})
-	// Payment Page
-	.when('/payment', {
-		templateUrl: 'app/partials/payment.html',
-		controller: 'PaymentController',
-	})
 	// Profile Page
 	.when('/profile', {
 		templateUrl: 'app/partials/profile.html',

@@ -2,11 +2,23 @@
 
 <hr>
   <ul ng-show='selectedGarage === undefined' class='listing garage-listing'>
-  <li ng-repeat="garage in garages" ng-click="selectGarage(garage, $index)">
-    <div class='img' back-img="img/{{ garage.img }}"></div>
-    <span class='name'>{{ garage.name }}</span>
-    <span class='desc'>{{ garage.desc }}</span>
+  <li ng-repeat="item in quoteItems">
+    <div class='img' back-img="img/{{ item.img }}"></div>
+    <span class='name'>{{ item.name }}</span>
+    <span class='desc'>{{ item.desc }}</span>
+    <button style="margin-left: 15px" ng-click="inspect($index)" class="glyphicon glyphicon-search btn btn-info"></button>
+    <button style="margin-left: 15px" ng-click="kill($index)" class="glyphicon glyphicon-remove btn btn-danger"></button>
   </li>
 </ul>
 
-<button ng-click="submitQuote()">NEXT</button>
+<button ng-show='submitted === undefined' style="margin-left: 15px" ng-click="submitQuote()" class="btn btn-primary">Accept</button>
+
+<div class="margin-left: 15px" ng-show='submitted' >
+<div class="margin-left: 15px">Inspect the completed work to your satisfaction, then continue to payment.</div><br>
+<button style="margin-left: 15px" ng-click="submitPayment()" class="btn btn-primary">Confirm & Pay</button>
+<div>
+<script type="text/javascript">
+    function processPaymentAmount(dollarAmt) {
+        Android.processPaymentAmount(dollarAmt);
+    }
+</script>

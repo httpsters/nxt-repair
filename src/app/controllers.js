@@ -7,8 +7,8 @@ angular.module('repairControllers', [])
 .controller('GaragesController', function ($scope, $http, $window, $location, appState) {
 
 	$scope.garages = [
-		{name: "Joe's Garage", img: "garage1.jpg", desc: "Certified Drive Clean Test and Repa" },
-		{name: "Vinsetta Garage", img: "garage2.jpg", desc: "Independently owned and family op" },
+		{name: "Joe's Garage", img: "garage1.jpg", desc: "Certified Drive Clean Test and Repairs" },
+		{name: "Vinsetta Garage", img: "garage2.jpg", desc: "Independently owned and family operated" },
 		{name: "Masters Garage", img: "garage3.jpg", desc: "Masters Garage has been providing a" },
 		{name: "Winsdor Garage", img: "garage4.jpg", desc: "Highest standards, dedicated mechanics" },
 		{name: "George's Auto Repair", img: "garage5.jpg", desc: "Garage repair and serive to custom" },
@@ -23,7 +23,7 @@ angular.module('repairControllers', [])
 
 	$scope.bookGarage = function(date) {
 		appState.bookGarage($scope.selectedGarage, date);
-		$location.path('quote');
+		$location.path('info');
 	};
 
 })
@@ -98,7 +98,7 @@ angular.module('repairControllers', [])
 
 .controller('InfoController', function ($scope, $http, $window, $location, appState) {
 
-	$scope.submitPayment = function() {
+	$scope.getQuote = function() {
 		$location.path('quote');
 	};
 
@@ -106,26 +106,27 @@ angular.module('repairControllers', [])
 
 .controller('QuoteController', function ($scope, $http, $window, $location, appState) {
 
-	$scope.submitQuote = function() {
-		appState.submitQuote();
-		$location.path('payment');
-	};
-
-	$scope.garages = [
-		{name: "Tire Replacement", img: "tire.jpg", desc: "$245.00" },
-		{name: "Muffler", img: "muffler.jpg", desc: "$300.00" },
-		
-	];
-})
-
-.controller('PaymentController', function ($scope, $http, $window, $location, appState) {
-
 	$scope.submitPayment = function() {
-		$scope.totalAmt = 666.00; //todo: this is tempoary
+		$scope.totalAmt += 300.00; //todo: this is tempoary
 		AndroidInterop.processPaymentAmount($scope.totalAmt);
 		$location.path('profile');
 	};
 
+	$scope.submitQuote = function() {
+		$scope.submitted = true;
+		// send confirm to backent :P
+	};
+
+	$scope.kill = function(index) {
+		console.log(index);
+		$scope.quoteItems.splice(index, 1); //remove item from list
+	};
+
+	$scope.quoteItems = [
+		{name: "Tire Replacement", img: "tire.jpg", desc: "$245.00" },
+		{name: "Muffler", img: "muffler.jpg", desc: "$300.00" },
+		
+	];
 })
 
 .controller('ProfileController', function ($scope, $http, $window, $location, appState) {
