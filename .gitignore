@@ -8,3 +8,10 @@ node_modules/
 
 # Production
 dist/
+src/css/style.css
+
+src/css/style.min.css
+
+src/css/style.css
+
+src/css/style.min.css

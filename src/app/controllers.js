@@ -148,7 +148,10 @@ angular.module('repairControllers', [])
 	$scope.userProfile.credit += 5; // add $5 of credit each time
 
 	$scope.submitPayment = function() {
-		$scope.totalAmt += 300.00; //todo: this is tempoary
+		for(var i = 0; i<$scope.quoteItems.length; i++){
+			$scope.totalAmt += $scope.quoteItems[i].amt;
+		}
+		
 		if (AndroidInterop !== undefined) {
 			console.log("interop is defined", AndroidInterop);
 			AndroidInterop.processPaymentAmount($scope.totalAmt);
@@ -180,8 +183,8 @@ angular.module('repairControllers', [])
 	};
 
 	$scope.quoteItems = [
-		{name: "Tire Replacement", img: "tire.jpg", desc: "$245.00" },
-		{name: "Muffler", img: "muffler.jpg", desc: "$300.00" },
+		{name: "Tire Replacement", img: "tire.jpg", desc: "$245.00" , amt: 245.00},
+		{name: "Muffler", img: "muffler.jpg", desc: "$300.00", amt: 300.00 },
 
 	];
 })
