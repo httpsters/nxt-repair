@@ -7988,6 +7988,11 @@ h1 {
   -webkit-tap-highlight-color: transparent;
 }
 
+
+.service profile{
+  padding-left: 14px;
+}
+
 section .scroll,
 section .scrollMask,
 section header button,
