@@ -6,6 +6,7 @@
 
 <ul ng-show='selectedGarage === undefined' class='listing garage-listing'>
   <li ng-repeat="garage in garages" ng-click="selectGarage(garage, $index)">
+    <i class="arrow fa fa-angle-right"></i>
     <div class='img' back-img="img/{{ garage.img }}"></div>
     <span class='name'>{{ garage.name }}</span>
     <span class='desc'>{{ garage.desc }}</span>
